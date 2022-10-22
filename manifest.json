@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "插件说明",
+  "icons": {
+    "18": "image/on.png"
+  },
+  "author": "ziye",
+  "background": {
+    "script": "src/background.js"
+  },
+  "action": {
+    "default_icon": "image/icon.png",
+    "default_title": "主题",
+    "default_popup": "reactts/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["tabs", "storage", "unlimitedStorage"],
+  "chrome_url_overrides": {
+    "newtab": "html/newtab.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["image/background.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

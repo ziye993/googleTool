@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新标签页</title>
+  <style>
+    body {
+      background-image: url(../image/background.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(196, 196, 215)
+    }
+
+    #inputSpan {
+      width: 345px;
+      height: 36px;
+      border-radius: 10px 0 0 10px;
+      border: 2px solid #c4c7ce;
+      border-color: #7b7b7b #b6b6b6 #b6b6b6 #7b7b7b;
+      overflow: hidden;
+    }
+
+    #baiduInput {
+      width: 345px;
+      height: 36px;
+      border: none;
+      font-size: 18px;
+    }
+
+    #baiduInput:focus {
+      border: 0;
+      background-color: #FFFFFF;
+      outline: none;
+    }
+
+    #click {
+      width: 112px;
+      position: relative;
+      z-index: 2;
+      zoom: 1;
+      border: 0;
+      height: 40px;
+      background-color: #4e6ef2;
+      text-align: center;
+      line-height: 41px;
+      font-weight: 400;
+      border-radius: 0 10px 10px 0;
+      font-size: 17px;
+      color: #FFFFFF;
+      margin-left: -2px;
+      cursor: pointer;
+    }
+
+    #box {
+      display: flex;
+      margin-top: 10%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <span id="inputSpan">
+      <input type="text" id="baiduInput">
+    </span>
+    <button id="click">百度一下</button>
+  </div>
+</body>
+<script type="text/javascript" src="../js/newTab.js"></script>
+
+</html>
