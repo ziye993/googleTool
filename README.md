@@ -45,7 +45,9 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-
 1:主题功能：
 2:代理功能；
-3:搜索精简；
+3:搜索精简；{
+    屏蔽百度广告，
+    屏蔽广告弹框，
+}

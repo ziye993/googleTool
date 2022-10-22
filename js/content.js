@@ -1,4 +1,4 @@
-let body = document.getElementsByTagName("html")[0];
+const body = document.getElementsByTagName("html")[0];
 var runtime = chrome && chrome.runtime;
 var storage = chrome && chrome.storage && chrome.storage.local;
 
@@ -40,9 +40,12 @@ function setTheme(imageUrl, config) {
   }, 1);
 }
 
+
+
 // 主题背景图片
 storage.get("config", (res) => {
   console.log("asdasdasdasd", res);
+ 
   if (res?.config?.themeStatus) {
     const path = runtime.getURL("../image/background.png");
     setTheme(path);

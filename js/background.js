@@ -3,6 +3,14 @@ chrome.runtime.onInstalled.addListener(function () {
   chrome.extension.getViews();
 });
 
-function getWindow(){
+function getWindow() {
   return chrome.extension.getViews();
 }
+
+browser.browserAction.setBadgeText({ text: "1234" });
+browser.browserAction.setBadgeBackgroundColor({ color: "red" });
+
+browser.browserAction.onClicked.addListener(() => {
+  browser.browserAction.setBadgeBackgroundColor({ color: "green" });
+});
+

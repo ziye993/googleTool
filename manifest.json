@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "demo",
+  "name": "tool",
   "version": "1.0.0",
   "description": "插件说明",
   "icons": {
@@ -13,7 +13,7 @@
   "action": {
     "default_icon": "image/icon.png",
     "default_title": "主题",
-    "default_popup": "./build/index.html"
+    "default_popup": "build/index.html"
   },
   "content_scripts": [
     {
