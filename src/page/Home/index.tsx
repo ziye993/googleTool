@@ -16,17 +16,17 @@ const Home: React.FC = function (props) {
   const [status, setStatus] = useState(false);
 
   useEffect(() => {
-    chrome.storage.local.get("config", (res: any) => {
+    (chrome || {})?.storage?.local?.get?.("config", (res: any) => {
       setStatus(res?.config?.status || false);
       setIsRead(true);
     });
   }, []);
 
   const switchChange = (checked: boolean) => {
-    chrome.storage.local.get("config", (res: any = {}) => {
+    (chrome || {})?.storage?.local?.get?.("config", (res: any = {}) => {
       const config = res.config || {};
       config.status = checked;
-      chrome.storage.local.set({ config: config }, () => []);
+      (chrome || {})?.storage?.local?.set?.({ config: config }, () => []);
     });
   };
   if (!isRead) {

@@ -39,7 +39,6 @@ export function compress(
     };
 }
 
-
 // 持续消息发收器
 export function continuedMessage(id: string | number, strArr: any[], index: number, errorNum?: number) {
     const isEnd = index === strArr.length - 1;
