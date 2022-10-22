@@ -57,7 +57,7 @@ const ThemeBar: React.FC = function () {
     };
   };
 
-  const inputUrl = () => {};
+  const inputUrl = () => {console.log(1)};
   const removeImage = (key: string, index: number) => {
     (chrome || {})?.storage?.local?.remove?.(key, () => {
       setThemeList((prevState: IThemeList = []) => {
