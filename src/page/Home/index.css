@@ -1,0 +1,4 @@
+.allSwitch{
+    display: flex;
+    flex-direction: row-reverse;
+}

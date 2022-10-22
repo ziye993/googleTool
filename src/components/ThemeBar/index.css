@@ -1,0 +1,57 @@
+.themeBox .themeCover {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    /* filter: blur(1px); */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.themeBox .themeItemBox {
+    position: relative;
+}
+
+.themeBox .itemPreview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.themeBox .itemPreview:hover {
+    opacity: 1;
+}
+
+
+.themeBox .itemPreview .ant-btn {
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.themeHead {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.uploadFile {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    /* opacity: 0; */
+    border: 0px solid #000000;
+}
+
+.themeFileBox {
+    width: 72px;
+    height: 32px;
+    display: block;
+}

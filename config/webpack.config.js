@@ -313,13 +313,14 @@ module.exports = function (webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
-        '@': path.appSrc
+        '@': path.resolve(__dirname,'./src'),
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -694,6 +695,20 @@ module.exports = function (webpackEnv) {
                 noEmit: true,
                 incremental: true,
                 tsBuildInfoFile: paths.appTsBuildInfoFile,
+                "paths": {
+                  "components": [
+                    "src/components/*"
+                  ],
+                  "lib": [
+                    "src/lib/*"
+                  ],
+                  "api": [
+                    "src/api/index"
+                  ],
+                  "@": [
+                    "src/*"
+                  ]
+                }
               },
             },
             context: paths.appPath,
