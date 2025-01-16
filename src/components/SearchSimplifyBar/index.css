@@ -1,0 +1,159 @@
+.seachBox {
+  position: relative;
+  padding: 10px;
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.seachBox::-webkit-scrollbar {
+  display: none;
+}
+
+.seachBox>.toolBox,
+.seachBox>.toolBoxAdd {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  line-height: 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* cursor: pointer; */
+}
+
+.closeIcon,
+.copyIcon,
+.editIcon {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+}
+.toolBox>span{
+  max-width: 80%;
+}
+.toolBox .copyIcon {
+  right: 100px;
+  display: none;
+}
+.toolBox .editIcon {
+  right: 60px;
+}
+
+.toolBox:hover .copyIcon {
+  display: unset;
+}
+
+.closeIcon::after,
+.copyIcon::after,
+.editIcon::after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+}
+.checkbox_tool{
+margin-right: 10px !important;
+}
+.toolBoxName {
+  cursor: pointer;
+  width: 90%;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.urlSet {
+  width: 100%;
+  height: 0px;
+  overflow: auto;
+  transition: all 0.5s;
+  max-height: 100px;
+  box-sizing: border-box;
+}
+
+.urlSet::-webkit-scrollbar {
+  display: none;
+}
+
+.actionUrlSet {
+  height: 100px;
+  padding: 10px 0;
+}
+
+.hiddenUrlSet {
+  height: 0px;
+}
+
+.cngKeyItem {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 5px;
+  margin: 10px;
+}
+
+.seachBox>.toolBoxAdd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.seachBox>.toolBoxAdd>.input {
+  margin-right: 10px;
+}
+
+.seachBox .input {
+  width: auto;
+  height: 33px;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+.seachBox .input:focus {
+  outline: none;
+}
+
+.seachBox .seachTitleEdit {
+  width: 100%;
+}
+
+.classSpanName {
+  background-color: #ccc;
+  border: 1px solid #aaa;
+  padding: 0px 5px;
+  margin: 0 5px;
+  border-radius: 5px;
+  /* display: inline-block; */
+}
+
+
+.seachTitleEdit .hideClassBoxInput {
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  display: none;
+}
+
+.seachStatus{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}

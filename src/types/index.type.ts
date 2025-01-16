@@ -1,6 +1,6 @@
 interface IThemeListItem {
-    imageUrl: string;
-    backgroundColor?: string;
-    key: string;
+  imageUrl: string;
+  backgroundColor?: string;
+  key: string;
 }
 export type IThemeList = IThemeListItem[];

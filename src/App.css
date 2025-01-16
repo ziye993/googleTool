@@ -5,7 +5,7 @@
   width: 800px;
   height: 500px;
   border: 1px solid #000000;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -42,4 +42,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App>.ant-tabs {
+  height: 100%;
+}
+
+.App>.ant-tabs>.ant-tabs-content-holder {
+  height: 100%;
+}
+
+.App>.ant-tabs>.ant-tabs-content-holder>.ant-tabs-content {
+  height: 100%;
+}
+
+.App>.ant-tabs>.ant-tabs-content-holder>.ant-tabs-content>.ant-tabs-tabpane {
+  height: 100%;
 }
