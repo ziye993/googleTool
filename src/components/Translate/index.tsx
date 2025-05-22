@@ -10,7 +10,7 @@ interface IFormData {
   targetStrType: string;
   appid: string;
   originStr: string;
-  res: any[],
+  res: any,
   key: string;
 }
 
@@ -34,19 +34,28 @@ const Translate: React.FC = function () {
   const onKeyDown = async (e: any) => {
     if (e.keyCode === 13 && e.ctrlKey) {
       const text = e.target.value;
-      const tData = await getTranlateData(text, formData.originStrType, formData.targetStrType, formData.appid, formData.key);
+      const tData = await getTranlateData(text, formData.originStrType, formData.targetStrType, formData.appid, formData.key);// 目标
+      const zhData = formData.targetStrType !== 'zh' ? await getTranlateData(text, formData.originStrType, "zh", formData.appid, formData.key) : null;//中
+      const enData = formData.targetStrType !== 'en' ? await getTranlateData(text, formData.originStrType, "en", formData.appid, formData.key) : null;//英
+      const resData: any = {
+        tData,
+        enData,
+        zhData,
+        error: null,
+      }
+
       if (tData) {
         setFormData(v => {
           localStorage.setItem("translatrFormData", JSON.stringify({
             ...v,
             originStr: text,
-            res: tData
+            res: resData
           }));
-          return { ...v, res: tData }
+          return { ...v, res: resData }
         });
         return
       }
-      setFormData(v => ({ ...v, res: [{ dst: "请求错误！" }] }));
+      setFormData(v => ({ ...v, res: { error: '请求失败' } }));
     };
   }
 
@@ -90,9 +99,19 @@ const Translate: React.FC = function () {
         value={formData.originStr}
         onChange={(e) => { setFormData(v => ({ ...v, originStr: e.target.value })); }} />
       <div className='trRes'>
-        {formData.res.map((item, index) => {
+        <span style={{ fontWeight: 700 }}>中</span>
+        {formData?.res?.zhData?.map((item: any, index: number) => {
           return <span key={`res_${index}`} onClick={() => copyText(item.dst)}>{item.dst}</span>
         })}
+        <span style={{ fontWeight: 700, marginTop: '30px' }}>英</span>
+        {formData?.res?.enData?.map((item: any, index: number) => {
+          return <span key={`res_${index}`} onClick={() => copyText(item.dst)}>{item.dst}</span>
+        })}
+        <span style={{ fontWeight: 700, marginTop: '30px' }}>目标语言{`(如果已设置)`}</span>
+        {formData?.res?.tData?.map((item: any, index: number) => {
+          return <span key={`res_${index}`} onClick={() => copyText(item.dst)}>{item.dst}</span>
+        })}
+        <span>{formData?.res?.error || ''}</span>
       </div>
     </div>
   </div>

@@ -32,7 +32,7 @@ function ThemeBar(): any {
           'compressThemeList',
           (res: any) => {
             const compressThemeList = res.compressThemeList || [];
-
+            console.log("compressThemeList",res)
             compressThemeList.push({ imageUrl: result, key: `ziye_${key}` });
             (chrome || {})?.storage?.local?.set?.(
               { compressThemeList: newList },
@@ -138,7 +138,6 @@ function ThemeBar(): any {
                 <Button ghost={true} onClick={() => lib.handUseTheme(item.key)}>
                   使用
                 </Button>
-                <Button ghost={true}>预览</Button>
                 <Button
                   ghost={true}
                   danger={true}

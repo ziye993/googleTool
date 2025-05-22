@@ -6,12 +6,15 @@ import ToolContent from 'components/Tool';
 import './index.css';
 import Translate from 'components/Translate';
 import AgentBar from 'components/AgentBar';
+import TherJobo from 'components/TherJobo';
+
 
 const items = [
   { label: '翻译', key: 'translate', children: <Translate /> },
   { label: '搜索精简', key: 'searchSimplify', children: <SearchSimplifyBar /> },
   { label: '二维码转换', key: 'tool', children: <ToolContent /> },
   { label: '主题', key: 'theme', children: <ThemeBar /> },
+  { label: '中间脚本', key: 'therJobo', children: <TherJobo /> },
   { label: '代理', key: 'proxy', children: <AgentBar /> },
 
 ] as any[];
@@ -37,9 +40,9 @@ const Home: React.FC = function (props) {
       (chrome || {})?.storage?.local?.set?.({ config: config }, () => []);
     });
   };
-useEffect(()=>{
-  // fetch("https://www.baidu.com/")
-},[])
+  useEffect(() => {
+    // fetch("https://www.baidu.com/")
+  }, [])
 
   if (!isRead) {
     return <></>;

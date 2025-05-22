@@ -1,0 +1,92 @@
+.TherJoboBoxItem,
+.TherJoboBoxItemAdd,
+.TherJoboBoxItemdefault {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    line-height: 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 10px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    transition: all 0.5s;
+    overflow: hidden;
+
+}
+
+.TherJoboBoxItemhidden {
+    height: 50px;
+}
+
+.TherJoboBoxItemEdit {
+    height: 210px;
+    transition: all 0.5s;
+}
+
+.TherJoboBoxItem>p {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.TherJoboBoxItemAdd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+/* .TherJoboBoxItemAdd>.TherJoboBoxItemSave{
+    display: block;
+    position: inherit;
+    left: 0;
+
+} */
+
+.TherJoboBoxItemAdd>input {
+    width: 20%;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* .TherJoboBoxItemContent textarea{
+    width: 100%;
+    min-height: 100px;
+} */
+.TherJoboBoxItemContent {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.TherJoboBoxItem .TherJoboBoxItemContentInput {
+    width: 100%;
+    min-height: 100px;
+    margin: 0;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.TherJoboBoxItemSave {
+    width: 90px;
+    height: 33px;
+    margin: 10px;
+    position: relative;
+    left: calc(100% - 110px);
+    border: 1px solid #ccc;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.TherJoboBoxItemSave:hover {
+    background-color: rgba(210, 210, 210, 0.5);
+}

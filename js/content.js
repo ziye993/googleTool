@@ -50,7 +50,7 @@ if (chrome) {
     }
   });
   const isHit = (item, content) => {
-    if (item === '*') {
+    if (item === '*' || item === '*=null') {
       return true
     }
 
@@ -95,6 +95,13 @@ if (chrome) {
             const cloneChild = child.cloneNode(true);
             configItems.forEach(configItem => { //需要命中的文本 * 表示所有
               if (!isHit(configItem, content)) {
+                return
+              }
+              if (configItem === '*=null') { // 隐藏所有
+                child.style.overflow = 'hidden';
+                child.innerHTML = "";
+                child.style.display = 'none';
+                console.log(`已筛选结果:${configItem}`)
                 return
               }
               // configItem.forEach(item => { //需要命中的文本 * 表示所有

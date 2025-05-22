@@ -198,6 +198,7 @@ const SearchSimplifyBar: React.FC = function () {
     localStorage.setItem('defaultSeachTool', JSON.stringify(data));
     const storage = chrome?.storage?.local;
     if (storage) {
+      
       storage.set({ defaultSeachTool: JSON.stringify(data) })
     }
   }
