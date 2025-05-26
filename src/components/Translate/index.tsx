@@ -99,6 +99,11 @@ const Translate: React.FC = function () {
         value={formData.originStr}
         onChange={(e) => { setFormData(v => ({ ...v, originStr: e.target.value })); }} />
       <div className='trRes'>
+        <span style={{ fontWeight: 700, marginTop: '30px' }}>目标语言{`(如果已设置)`}</span>
+        {formData?.res?.tData?.map((item: any, index: number) => {
+          return <span key={`res_${index}`} onClick={() => copyText(item.dst)}>{item.dst}</span>
+        })}
+        <span>{formData?.res?.error || ''}</span>
         <span style={{ fontWeight: 700 }}>中</span>
         {formData?.res?.zhData?.map((item: any, index: number) => {
           return <span key={`res_${index}`} onClick={() => copyText(item.dst)}>{item.dst}</span>
@@ -107,11 +112,6 @@ const Translate: React.FC = function () {
         {formData?.res?.enData?.map((item: any, index: number) => {
           return <span key={`res_${index}`} onClick={() => copyText(item.dst)}>{item.dst}</span>
         })}
-        <span style={{ fontWeight: 700, marginTop: '30px' }}>目标语言{`(如果已设置)`}</span>
-        {formData?.res?.tData?.map((item: any, index: number) => {
-          return <span key={`res_${index}`} onClick={() => copyText(item.dst)}>{item.dst}</span>
-        })}
-        <span>{formData?.res?.error || ''}</span>
       </div>
     </div>
   </div>
