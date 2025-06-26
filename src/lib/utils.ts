@@ -29,3 +29,27 @@ export function isURLorIP(str: string) {
   // return regex.test(str);
   return true
 }
+
+
+// 设置数据：传入 key 和 data 对象
+export function setStorage(id: string, data: any) {
+  if (chrome?.storage?.local === undefined && localStorage) {
+    localStorage.setItem(id, JSON.stringify(data));
+    return Promise.resolve(true);
+  }
+  return new Promise((resolve) => {
+    chrome.storage.local.set({ [id]: data }, () => resolve(true));
+  });
+}
+
+// 获取数据：传入 key，返回对应值
+export function getStorage(id: string) {
+  if (chrome?.storage?.local === undefined && localStorage) {
+    return Promise.resolve(localStorage.get(id));
+  }
+  return new Promise((resolve) => {
+    chrome.storage.local.get(id, (result: any) => {
+      resolve(result[id]);
+    });
+  });
+}

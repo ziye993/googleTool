@@ -17,9 +17,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-*{
+
+* {
   box-sizing: border-box;
 }
+
 .appidBox {
   display: flex;
   flex-direction: row;
@@ -64,20 +66,34 @@ code {
 
 .trResBox {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
+.trsCode {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+}
+
 .trRes {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   max-height: 200px;
   overflow: auto;
   margin-left: 10px;
+  height: auto;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+.trRes::-webkit-scrollbar {
+  display: none;
 }
 
 .trRes>span {
@@ -93,15 +109,80 @@ code {
 }
 
 textarea:focus {
-  outline: none;  /* 去掉默认的聚焦外边框 */
+  outline: none;
+  /* 去掉默认的聚焦外边框 */
 }
 
-.qrcodeTrslate{
+.qrcodeTrslate {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
-.qrcodeTrslate>span{
+
+.qrcodeTrslate>span {
   margin: 0 10px 0 0;
 }
+
+.trspan {
+  transition: all 0.3s;
+  margin: 3px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.trspan:hover {
+  color: #007aec;
+
+}
+
+.codebox {
+  display: flex;
+  flex-direction: row;
+  max-height: 150px;
+  overflow: auto;
+
+}
+
+.codebox::-webkit-scrollbar {
+  display: none;
+}
+
+.code_underline,
+.code_hump {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 50%;
+}
+
+.codebox p,
+.codebox .ant-checkbox-wrapper {
+  margin: 0px !important;
+  padding: 0px;
+}
+
+.codebox .trspan {
+  white-space: nowrap;
+  /* 禁止文字换行 */
+  overflow: hidden;
+  /* 隐藏超出容器的内容 */
+  text-overflow: ellipsis;
+  /* 超出部分显示省略号 */
+  min-width: 150px;
+}
+
+.trRes_item {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  min-width: 250px;
+  margin-top: 10px;
+  /* max-height: 150px;
+  overflow: auto; */
+}
+
+/* 
+.trRes_item::-webkit-scrollbar {
+  display: none;
+} */
